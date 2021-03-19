@@ -17,8 +17,8 @@ unzip ml-1m.zip
 
 Part 2 - Building a Recommender Service
 1. Get Twisted, and Klein and Redis modules for Python\
-```pip3 install --user twisted```
-```pip3 install --user klein```
+```pip3 install --user twisted```\
+```pip3 install --user klein```\
 ```pip3 install --user redis```
 2. Install Redis and start up the server\
 ```wget http://download.redis.io/releases/redis-2.8.7.tar.gz```
