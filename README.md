@@ -67,7 +67,7 @@ def home(request):
 
 # Start up a listener on port 4200
 run("localhost", 4200)
-```\
+```
 4. Start the web service.\
 ```twistd -noy server.py &```\
 5. Test the web service with user id “5”:\
