@@ -7,7 +7,7 @@ Part 1 - Building a Recommender
 unzip ml-1m.zip
 3. Convert ratings.dat, trade “::” for “,”, and take only the first three columns:\
 ```cat ml-1m/ratings.dat | sed 's/::/,/g' | cut -f1-3 -d, > ratings.csv```
-4.Put ratings file into HDFS:\
+4. Put ratings file into HDFS:\
 ```hdfs dfs -put ratings.csv /user/hadoop/ratings.csv```
 5. Run the recommender job:\
 ```mahout recommenditembased --input /user/hadoop/ratings.csv --output recommendations --numRecommendations 10 --outputPathForSimilarityMatrix similarity-matrix --similarityClassname SIMILARITY_COSINE```
@@ -25,7 +25,7 @@ Part 2 - Building a Recommender Service\
 ```tar xzf redis-2.8.7.tar.gz```
 ```cd redis-2.8.7```
 ```make```
-```./src/redis-server &```\
+```./src/redis-server &```
 3. Build a web service that pulls the recommendations into Redis and responds to queries.(Create directory called script and put server.py file which incuded following content)
 ```
 from klein import run, route
@@ -69,6 +69,6 @@ def home(request):
 run("localhost", 4200)
 ```
 4. Start the web service.\
-```twistd -noy server.py &```\
+```twistd -noy server.py &```
 5. Test the web service with user id “5”:\
-```curl localhost:4200/10```\
+```curl localhost:4200/10```
